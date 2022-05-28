@@ -11,6 +11,6 @@ export default async function handler(req, res) {
   const message = req.body.message;
   const bot = await client;
   const channel = await bot.channels.fetch("980161368923713536");
-  channel.send(message);
+  await channel.send(message);
   res.status(200).json({ successful: true });
 }
