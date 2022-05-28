@@ -11,24 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1>Send Message</h1>
-        <input id="message" style={{ width: "200px", height: "2rem" }} />
-        <button
-          onClick={async () => {
-            const input = document.getElementById("message");
-            const message = input.value;
-            await fetch("http://localhost:3000/api/sendMessage", {
-              method: "POST",
-              body: JSON.stringify({
-                message: message,
-              }),
-            });
-          }}
-        >
-          Send
-        </button>
-      </main>
+      <main className={styles.main}></main>
 
       <footer className={styles.footer}>
         <a
