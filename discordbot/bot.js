@@ -5,7 +5,7 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
-let botCache = nil;
+let botCache = null;
 const bot = new Promise((resolve, reject) => {
   if (botCache) {
     resolve(botCache);
