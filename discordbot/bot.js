@@ -5,10 +5,15 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
+let botCache = nil;
 const bot = new Promise((resolve, reject) => {
-  client.on("ready", () => {
-    resolve(client);
-  });
+  if (!botCache) {
+    resolve(botCache);
+  } else
+    client.on("ready", () => {
+      botCache = client;
+      resolve(client);
+    });
 });
 
 client.login(
