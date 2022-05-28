@@ -7,7 +7,7 @@ const client = new Client({
 
 let botCache = nil;
 const bot = new Promise((resolve, reject) => {
-  if (!botCache) {
+  if (botCache) {
     resolve(botCache);
   } else
     client.on("ready", () => {

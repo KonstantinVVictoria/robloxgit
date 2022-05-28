@@ -9,7 +9,6 @@ export default async function handler(req, res) {
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   });
   const message = req.body.message;
-  console.log(req.body);
   const bot = await client;
   const channel = await bot.channels.fetch("980161368923713536");
   channel.send(message);
